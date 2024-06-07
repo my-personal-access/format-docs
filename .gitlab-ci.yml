@@ -1,0 +1,4 @@
+include:
+  - project: 'my-personal-access/gitlab-ci-cd'
+    ref: main
+    file: .python-3.9.10.yml

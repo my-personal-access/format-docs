@@ -1,0 +1,44 @@
+ignore-paths:
+  - Lib
+  - Scripts
+  - Include
+  - bin
+  - include
+  - lib
+  - lib64
+
+strictness: medium
+test-warnings: true
+doc-warnings: true
+autodetect: false
+max-line-length: 140
+
+pylint:
+  run: true
+  disable:
+   - unused-import
+   - dangerous-default-value
+   - consider-using-set-comprehension
+   - broad-exception-raised
+   - consider-iterating-dictionary
+   - broad-exception-raised
+   - eval-used
+   - cell-var-from-loop
+   - too-many-branches
+   - too-many-nested-blocks
+   - use-maxsplit-arg
+   - logging-fstring-interpolation
+   - redefined-builtin
+   - cyclic-import
+
+pydocstyle:
+  run: true
+  disable:
+   - D203
+   - D212
+   - D417
+
+mccabe:
+  run: true
+  disable:
+   - MC0001

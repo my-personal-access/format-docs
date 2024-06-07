@@ -1,0 +1,30 @@
+site_name: hawai 6 {{ project_name }}
+repo_url: https://<gitlab_url>/sdoppe/deploiements/docs-projets/hwi6_{{ project_name }}
+repo_name: GitLab
+edit_uri: -/tree/master/docs
+site_description: Documentation projet hawai 6 {{ project_name }}
+site_author: CNP
+docs_dir: docs
+site_dir: build
+plugins:
+    - search:
+    - mkdocs-simple-hooks:
+        hooks:
+            on_page_markdown: "commons.hooks:write_lots"
+markdown_extensions:
+    - toc:
+        permalink: "#"
+theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - python
+extra_css:
+  - custom.css
+nav:
+  - index.md
+  - Lots:
+    {% for train, local_lots in lots.items() %}- {{ train }}:
+    {% for local_lot in local_lots %}  - {{ local_lot }}
+    {% endfor %}{% endfor %}
